@@ -1,7 +1,7 @@
 
 module sha_256_Tb;
 
-    localparam length = 64;
+    localparam length = 8;
 
     logic      clk;
     logic      in_valid;
@@ -30,10 +30,10 @@ module sha_256_Tb;
 	$dumpvars(0, sha_256_Tb);
 
 
-	clk = 1'b0;
+	clk  = 1'b0;
 	
-	word = {8'h61, 8'h62, 8'h63, 8'h64, 8'h65, 8'h66, 8'h67, 8'h68};
-	//word = {8'h61, 8'h0a};
+	word = {8'h61};
+	//word = {8'h61};
 
 	in_valid = 1'b1;
     

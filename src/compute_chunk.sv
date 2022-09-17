@@ -79,6 +79,10 @@ module compute_chunk (
     endgenerate
     
     assign out_valid = intermediate_hash_valid[64];
-    assign next_hash = input_hashes[64] + intermediate_hashes[64];
+    always_comb begin
+	for (int i = 0; i < 8; i++) begin
+	    next_hash[i] = input_hashes[64][i] + intermediate_hashes[64][i];
+	end
+    end
     
 endmodule

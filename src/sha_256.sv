@@ -1,6 +1,6 @@
 module sha_256 #(
 		    parameter  LENGTH = 256,
-   		    localparam NCHUNKS = (LENGTH >> 9) + 1,
+   		    localparam NCHUNKS = ((LENGTH + 65) >> 9) + 1,
    		    localparam ROUNDED_LENGTH = 512 * NCHUNKS
 		    )(
 		      input logic	       clk,
